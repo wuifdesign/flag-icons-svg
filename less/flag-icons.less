@@ -36,7 +36,7 @@ span {
 
     .for(@flag-icons-elements, {
       &.flag-icon-@{value} {
-        background-image: url('@{flag-icons-path}/@{value}.svg');
+        background-image: ~"url('@{flag-icons-path}/@{value}.svg')";
       }
     });
   }
