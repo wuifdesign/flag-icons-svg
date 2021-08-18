@@ -1,0 +1,43 @@
+@import "_variables";
+
+.for(@list, @code) {
+  & {
+    .loop(@i:1) when (@i =< length(@list)) {
+      @value: extract(@list, @i);
+
+      @code();
+
+      .loop(@i + 1);
+    }
+
+    .loop();
+  }
+}
+
+span {
+  &.flag-icon {
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    line-height: 1em;
+    height: 1em;
+    width: (4 / 3) * 1em;
+
+    &.flag-icon-square {
+      height: 1em;
+      width: 1em;
+    }
+
+    &:before {
+      content: '\00a0';
+    }
+
+    .for(@flag-icons-elements, {
+      &.flag-icon-@{value} {
+        background-image: url('@{flag-icons-path}/@{value}.svg');
+      }
+    });
+  }
+}

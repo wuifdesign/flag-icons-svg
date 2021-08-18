@@ -1,0 +1,35 @@
+{
+  "name": "flag-icons-svg",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/wuifdesign/flag-icons-svg",
+  "engines": {
+    "node": ">=10"
+  },
+  "keywords": [
+    "svg",
+    "less",
+    "sass",
+    "css",
+    "icons",
+    "countries",
+    "flag",
+    "npm"
+  ],
+  "files": [
+    "css",
+    "less",
+    "sass",
+    "svg"
+  ],
+  "scripts": {
+    "build": "npm run clear-css && npm run build-css-with-sass",
+    "build-css-with-sass": "node-sass sass/flag-icons.scss css/flag-icons.css --output-style expanded",
+    "build-css-with-less": "lessc less/flag-icons.less css/flag-icons.css",
+    "clear-css": "rimraf css"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "less": "^4.1.1"
+  }
+}
