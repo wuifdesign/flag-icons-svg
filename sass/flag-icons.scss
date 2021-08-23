@@ -2,19 +2,15 @@
 
 span {
   &.flag-icon {
-    position: relative;
     display: inline-block;
-    background-size: contain;
+    vertical-align: middle;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     line-height: 1em;
     height: 1em;
-    width: (4 / 3) * 1em;
-
-    &.flag-icon-square {
-      height: 1em;
-      width: 1em;
-    }
+    width: (21 / 15) * 1em;
+    background-image: url(#{$flag-icons-path}/missing.svg);
 
     &:before {
       content: '\00a0';

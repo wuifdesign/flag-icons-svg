@@ -13,11 +13,7 @@ All `svg` flags are based on [madebybowtie/FlagKit](https://github.com/madebybow
 
 ## Instructions
 ```html
-  <!-- Rectangle -->
   <span class="flag-icon flag-icon-us"></span>
-
-  <!-- Square -->
-  <span class="flag-icon flag-icon-square flag-icon-us"></span>
 ```
 
 ## Reference
@@ -26,6 +22,7 @@ All `svg` flags are based on [madebybowtie/FlagKit](https://github.com/madebybow
 
 | Flag | Code | Region |
 | :-------------: | :-------------: | ------------- |
+| <img src='svg/missing.svg?raw=true' width='21' height='15'> | -- | Missing Flag
 | <img src='svg/ad.svg?raw=true' width='21' height='15'> | AD | Andorra
 | <img src='svg/ae.svg?raw=true' width='21' height='15'> | AE | United Arab Emirates
 | <img src='svg/af.svg?raw=true' width='21' height='15'> | AF | Afghanistan

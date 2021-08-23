@@ -1,17 +1,13 @@
 span.flag-icon {
-  position: relative;
   display: inline-block;
-  background-size: contain;
+  vertical-align: middle;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   line-height: 1em;
   height: 1em;
-  width: 1.33333em;
-}
-
-span.flag-icon.flag-icon-square {
-  height: 1em;
-  width: 1em;
+  width: 1.4em;
+  background-image: url(../svg/missing.svg);
 }
 
 span.flag-icon:before {
