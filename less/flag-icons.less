@@ -14,31 +14,29 @@
   }
 }
 
-span {
-  &.flag-icon {
-    display: inline-block;
-    vertical-align: middle;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    line-height: 1em;
+.flag-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  height: 1em;
+  width: (21 / 15) * 1em;
+  background-image: ~"url('@{flag-icons-path}/missing.svg')";
+
+  &.flag-icon-square {
     height: 1em;
-    width: (21 / 15) * 1em;
-    background-image: url(#{$flag-icons-path}/missing.svg);
-
-    &.flag-icon-square {
-      height: 1em;
-      width: 1em;
-    }
-
-    &:before {
-      content: '\00a0';
-    }
-
-    .for(@flag-icons-elements, {
-      &.flag-icon-@{value} {
-        background-image: ~"url('@{flag-icons-path}/@{value}.svg')";
-      }
-    });
+    width: 1em;
   }
+
+  &:before {
+    content: '\00a0';
+  }
+
+  .for(@flag-icons-elements, {
+    &.flag-icon-@{value} {
+      background-image: ~"url('@{flag-icons-path}/@{value}.svg')";
+    }
+  });
 }

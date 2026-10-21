@@ -1,3 +1,5 @@
+@use "sass:list";
+
 $flag-icons-path: '../svg' !default;
 
 $flag-icons-countries: (
@@ -75,12 +77,12 @@ $flag-icons-countries: (
   'fo'
   'fr'
   'ga'
+  'gb'
   'gb-eng'
   'gb-nir'
   'gb-sct'
   'gb-wls'
   'gb-zet'
-  'gb'
   'gd'
   'ge'
   'gf'
@@ -236,8 +238,8 @@ $flag-icons-countries: (
   'ua'
   'ug'
   'um'
-  'us-ca'
   'us'
+  'us-ca'
   'uy'
   'uz'
   'va'
@@ -259,4 +261,4 @@ $flag-icons-countries: (
 
 $flag-icons-extra: ();
 
-$flag-icons-elements: join($flag-icons-countries, $flag-icons-extra, comma);
+$flag-icons-elements: list.join($flag-icons-countries, $flag-icons-extra, comma);

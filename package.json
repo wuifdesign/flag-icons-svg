@@ -1,10 +1,17 @@
 {
   "name": "flag-icons-svg",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
-  "repository": "https://github.com/wuifdesign/flag-icons-svg",
+  "type": "module",
+  "style": "css/flag-icons.css",
+  "sass": "sass/flag-icons.scss",
+  "less": "less/flag-icons.less",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuifdesign/flag-icons-svg.git"
+  },
   "engines": {
-    "node": ">=10"
+    "node": ">=20.19.0"
   },
   "keywords": [
     "svg",
@@ -23,13 +30,18 @@
     "svg"
   ],
   "scripts": {
-    "build": "npm run clear-css && npm run build-css-with-sass",
-    "build-css-with-sass": "node-sass sass/flag-icons.scss css/flag-icons.css --output-style expanded",
-    "build-css-with-less": "lessc less/flag-icons.less css/flag-icons.css",
-    "clear-css": "rimraf css"
+    "generate": "node scripts/generate.mjs",
+    "build": "sass sass/flag-icons.scss css/flag-icons.css --style=expanded --no-source-map",
+    "test": "node --test test/styles.test.js"
   },
   "devDependencies": {
-    "node-sass": "^6.0.1",
-    "less": "^4.1.1"
+    "less": "^4.9.1",
+    "sass": "^1.106.0"
+  },
+  "volta": {
+    "node": "24.22.1"
+  },
+  "allowScripts": {
+    "@parcel/watcher": false
   }
 }

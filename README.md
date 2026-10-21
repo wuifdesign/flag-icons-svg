@@ -1,4 +1,7 @@
 # Flag Icons SVG
+
+[![npm version](https://img.shields.io/npm/v/flag-icons-svg.svg)](https://www.npmjs.com/package/flag-icons-svg)
+
 A beautiful `svg` + `less` + `sass` + `css` collection of country flags.
 
 ### Icons
@@ -16,10 +19,79 @@ All `svg` flags are based on [madebybowtie/FlagKit](https://github.com/madebybow
   <span class="flag-icon flag-icon-us"></span>
 ```
 
+The `flag-icon` class works on any element (`span`, `i`, `div`, ...).
+
+### Sass
+
+```scss
+@use "flag-icons-svg/sass/flag-icons";
+```
+
+To change the path of the `svg` files, configure the module with `with`. Setting `$flag-icons-path` before the import no longer works, because `@import` was replaced by `@use`.
+
+```scss
+@use "flag-icons-svg/sass/flag-icons" with ($flag-icons-path: '/assets/flags');
+```
+
+### Less
+
+```less
+@import "flag-icons-svg/less/flag-icons";
+```
+
+To change the path of the `svg` files, override `@flag-icons-path` after the import:
+
+```less
+@import "flag-icons-svg/less/flag-icons";
+@flag-icons-path: '/assets/flags';
+```
+
+### Plain CSS
+
+```html
+<link rel="stylesheet" href="node_modules/flag-icons-svg/css/flag-icons.css">
+```
+
+The CSS references the flags as `../svg/<code>.svg`, so keep the `css` and `svg` folders next to each other.
+
+### Square flags
+
+Add `flag-icon-square` to render a flag as a square instead of 21:15.
+
+### Accessibility
+
+Flags are decorative background images and are not announced by screen readers. Always show the country name as text next to the flag, or hide the flag from assistive technology:
+
+```html
+<span class="flag-icon flag-icon-us" aria-hidden="true"></span> United States
+```
+
+If the flag is the only content, give it a label instead:
+
+```html
+<span class="flag-icon flag-icon-us" role="img" aria-label="United States"></span>
+```
+
+### Extra svg files
+
+`svg/lgbt.svg` is shipped but has no `flag-icon-*` class. `svg/missing.svg` is the default background of every `.flag-icon` and is shown for unknown codes.
+
+## Contributing
+
+`flags.json` is the single source of truth for the flag list. After adding an `svg` file, add its code and name to `flags.json` and run:
+
+```bash
+npm run generate   # updates sass/_variables.scss, less/_variables.less, the table below and test.html
+npm run build      # compiles css/flag-icons.css
+```
+
+CI fails when these generated files are out of date.
+
 ## Reference
 
 ### Countries
 
+<!-- flags:start -->
 | Flag | Code | Region |
 | :-------------: | :-------------: | ------------- |
 | <img src='svg/missing.svg?raw=true' width='21' height='15'> | -- | Missing Flag
@@ -89,6 +161,7 @@ All `svg` flags are based on [madebybowtie/FlagKit](https://github.com/madebybow
 | <img src='svg/er.svg?raw=true' width='21' height='15'> | ER | Eritrea
 | <img src='svg/es.svg?raw=true' width='21' height='15'> | ES | Spain
 | <img src='svg/et.svg?raw=true' width='21' height='15'> | ET | Ethiopia
+| <img src='svg/eu.svg?raw=true' width='21' height='15'> | EU | European Union
 | <img src='svg/fi.svg?raw=true' width='21' height='15'> | FI | Finland
 | <img src='svg/fj.svg?raw=true' width='21' height='15'> | FJ | Fiji
 | <img src='svg/fk.svg?raw=true' width='21' height='15'> | FK | Falkland Islands
@@ -276,3 +349,4 @@ All `svg` flags are based on [madebybowtie/FlagKit](https://github.com/madebybow
 | <img src='svg/za.svg?raw=true' width='21' height='15'> | ZA | South Africa
 | <img src='svg/zm.svg?raw=true' width='21' height='15'> | ZM | Zambia
 | <img src='svg/zw.svg?raw=true' width='21' height='15'> | ZW | Zimbabwe
+<!-- flags:end -->
